@@ -1,6 +1,6 @@
 # NXT Field Ops
 
-NXT Field Ops is a **field operations assistance PWA** built by [NXT](https://nxtgrid.co). It is designed for technicians on the ground — providing the tools needed for meter installation, commissioning, and fault resolution directly from a mobile device.
+NXT Field Ops is a **field operations assistance PWA** for the NXT software suite. It is designed for technicians on the ground — providing the tools needed for meter installation, commissioning, and fault resolution directly from a mobile device.
 
 ## Features
 
