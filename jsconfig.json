@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@nxt/*": ["../nxt-ui-components/shared/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "dev-dist"]
+}

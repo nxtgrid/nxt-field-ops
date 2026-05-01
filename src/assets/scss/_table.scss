@@ -1,0 +1,110 @@
+@use '@nxt/styles/modules/variables' as *;
+@use '@nxt/styles/modules/mixins' as *;
+
+.tommaso-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse; 
+
+  tr {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: -16px;
+      height: 100%;
+      width: calc(100% + 32px);
+      z-index: 0;
+      border-bottom: 1px solid $nxt-color-background-light;
+
+      @media(min-width: $table-break) { 
+        left: -24px;
+        width: calc(100% + 48px);
+      }
+    }
+
+    &.tr-expandable::before {
+      box-shadow: inset 0 0 6px 0 rgba(black, 0.15);
+    }
+  }
+
+  @media (hover: hover) {
+    &--clickable tbody tr {
+      cursor: pointer;
+
+      &:hover::before {
+        background: $nxt-color-background-lighter;
+      }
+    }
+  }
+
+  th, td {
+    position: relative;
+    padding-block: 0.5rem;
+    z-index: 2;
+
+    &:not(:last-child) {
+      padding-right: 8px;
+
+      @media(min-width: 560px) {
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+.table-icon {
+  display: flex;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  svg {
+    transition: 400ms $ease--out-back;
+    z-index: 1;
+  }
+}
+
+button.table-icon {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    @include pseudo;
+    left: -8px;
+    top: -0.5rem;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 0.5rem 8px;
+    z-index: 0;
+  }
+
+  @media (hover: hover) {
+    &::after {
+      border-radius: 4px;
+    }
+    
+    &:hover::after {
+      background: $nxt-color-background-lighter;
+    }
+  }
+}
+
+// @TODO :: Very ugly and hacky, might exchange for NXT Table
+.table-scroller {
+  @include no-scrollbars;
+  overflow-x: auto;
+
+  width: calc(100% + 32px);
+  transform: translateX(-16px);
+  padding-inline: 16px;
+
+  @media(min-width: $table-break) { 
+    width: calc(100% + 48px);
+    transform: translateX(-24px);
+    padding-inline: 24px;
+  }
+}

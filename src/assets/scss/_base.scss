@@ -1,0 +1,31 @@
+@use '@nxt/styles/modules/variables' as *;
+
+$font-body: Helvetica, Arial, sans-serif;
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  min-height: 100%;
+}
+
+body {
+  font-family: $font-body;
+  color: $nxt-color-font-dark;
+  background-color: $nxt-color-blue-bright;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  overflow-x: hidden;
+}
+
+.link-inline {
+  color: $nxt-color-blue-highlight;
+}

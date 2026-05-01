@@ -1,0 +1,19 @@
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  # Cache assets forever for faster website
+  # @see https://www.voorhoede.nl/en/blog/faster-nuxt-sites-on-netlify/#cache-assets-forever
+  for = "/assets/*"
+  [headers.values]
+    cache-control = '''
+    max-age=31536000,
+    immutable
+    '''
